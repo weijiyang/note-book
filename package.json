@@ -1,0 +1,19 @@
+{
+  "name": "note-book",
+  "version": "1.0.0",
+  "description": "a note book to write down the things happened everyday",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://weijiyang:xue2468008@github.com/weijiyang/note-book.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/weijiyang/note-book/issues"
+  },
+  "homepage": "https://github.com/weijiyang/note-book#readme"
+}
