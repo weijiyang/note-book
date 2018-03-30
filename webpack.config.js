@@ -6,7 +6,7 @@ module.exports = {
         filename : 'bundle.js',
         path : path.join(__dirname , "dist")
     },
-    moudle : {
+    module : {
         rules : [
             {
                 test : /\.vue$/,
@@ -14,7 +14,30 @@ module.exports = {
             },
             {
                 test : /\.css$/,
-                loader : 'css-loader'
+                use : [
+                    'style-loader',
+                    'css-loader'
+                ]
+            },
+            {
+                test : /\.(gif|jpeg|png|jpg)$/,
+                use :[
+                    {
+                        loader :'url-loader',
+                        options : {
+                            limit : 1024,
+                            name :'[name]_note.[ext]'
+                        }
+                    }
+                ]
+            },
+            {
+                test : /\.styl$/,
+                use : [
+                    'style-loader',
+                    'css-loader',
+                    'stylus-loader'
+                ]
             }
         ]
     }

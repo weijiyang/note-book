@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/weijiyang/note-book/issues"
   },
-  "homepage": "https://github.com/weijiyang/note-book#readme"
+  "homepage": "https://github.com/weijiyang/note-book#readme",
+  "devDependencies": {
+    "webpack-cli": "^2.0.13"
+  }
 }
