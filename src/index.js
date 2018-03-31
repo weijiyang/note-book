@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './app.vue'
 
 import './assets/css/test.css'
-import './assets/css/test.styl'
+
 import './assets/images/bg1.jpg'
 
 const root = document.createElement('div')
