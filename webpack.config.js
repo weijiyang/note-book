@@ -105,7 +105,7 @@ if(isDev){
     config.plugins.push(
         new ExtractPlugin('styles.[chunkhash:8].css'),
         new webpack.optimize.CommonsChunkPlugin({
-            optimization:{cacheGroups:{vendor:{name:'vendor'}}}
+            name : 'vendor'
         })
     )
 }
