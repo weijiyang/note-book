@@ -50,6 +50,7 @@ export default {
 </script>
 <style lang="stylus" scoped>
 .helper{
+  white-space nowrap
   margin-top 10px
   width 90%
   height 2rem

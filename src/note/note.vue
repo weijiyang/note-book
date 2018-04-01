@@ -67,7 +67,7 @@ export default {
 </script>
 <style lang="stylus" scoped>
 .real-app{
-  width 98%
+  width 90%
   margin 0 auto 
 }
 .add-input{
@@ -75,8 +75,9 @@ export default {
   width 100%
   height 4rem
   font-size 2rem
-  padding-left : 1rem
+  padding 0 1rem
   background-color #fff
+  box-sizing border-box
 }
 </style>
 
