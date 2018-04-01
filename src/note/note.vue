@@ -7,16 +7,18 @@
       placeholder="接下来要做什么"
       @keyup.enter = "addTodo"
       >
-      <Item 
+      <item 
       :note="note"
-      v-for="note in notes"
+      v-for="note in filteredNotes"
       :key = "note.id"
       @del = "deleteNote"
       />
-      <Tabs 
-      :filter="filter"
+      <tabs  
+      :filter="filter" 
       :notes="notes"
-     />
+      @toggle = "toggleFilter"
+      @clearAll = "clearAllCompleted"
+      />
   </section>
 </template>
 <script>
@@ -33,6 +35,15 @@ export default {
   components:{
     Item,Tabs
   },
+  computed:{
+    filteredNotes(){
+      if(this.filter == "all"){
+        return this.notes
+      }
+      const completed = this.filter ==="completed"
+      return this.notes.filter(todo=>completed === todo.completed)
+    }
+  },
   methods : {
     addTodo(e){
       this.notes.unshift({
@@ -44,6 +55,12 @@ export default {
     },
     deleteNote(id){
       this.notes.splice(this.notes.findIndex(note=>note.id ==id),1)
+    },
+    toggleFilter(state){
+      this.filter = state
+    },
+    clearAllCompleted(){
+      this.notes = this.notes.filter(note =>!note.completed)
     }
   }
 }
@@ -60,8 +77,6 @@ export default {
   font-size 2rem
   padding-left : 1rem
   background-color #fff
-
-
 }
 </style>
 
