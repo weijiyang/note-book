@@ -5,7 +5,7 @@
       class="toggle"
       v-model="note.completed"
     >
-    <label >{{note.content}}</label>
+    <label :class="note.completed?'completed':''">{{note.content}}</label>
     <button class="destroy" @click="deleteNote">X</button>
   </div>
 </template>
@@ -18,7 +18,9 @@ export default {
     }
   },
   methods : {
-
+    deleteNote(){
+      this.$emit('del',this.note.id)
+    }
   }
 }
 </script>
@@ -36,6 +38,9 @@ export default {
     height 1.5rem
     vertical-align middle
     margin-left 0.5rem
+  }
+  .completed{
+    text-decoration line-through
   }
   .destroy{
     float right

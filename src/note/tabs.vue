@@ -1,7 +1,7 @@
 <template>
-  <div class="helper">
+  <div class="helper clearfix">
     <span class="left">
-      2 items left
+     {{unFinishedNoteLength}} items left
     </span>
     <span class="tabs">
       <span 
@@ -22,23 +22,58 @@ export default {
     filter:{
       type : String,
       required : true
+    },
+    notes:{
+      type : Array,
+      required : true
     }
   },
   data(){
     return{
-      states:['all','active','completed']
+      states:['all','active','completed']   
+    }
+  },
+  computed:{
+    unFinishedNoteLength(){
+      return this.notes.filter(node => !node.completed).length
     }
   },
   methods : {
     clearAllComplted(){},
-    toggleFilter(){}
+    toggleFilter(state){}
   }
 }
 </script>
 <style lang="stylus" scoped>
 .helper{
-  widt 90%
+  margin-top 10px
+  width 90%
   height 2rem
+  font-size 1rem
+  color #333
+  .left{
+   float left
+   width 33%
+   text-align center
+  }
+  .tabs{
+    float left
+    width 33%
+    text-align center
+    .state{
+    padding 0 0.1rem
+    }
+    .actived{
+      color red
+      border 2px solid #fff
+      border-radius 10px
+    }
+  }
+  .clear{
+    float right
+    width 33%
+    text-align center
+  }
 }
 </style>
 
