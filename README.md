@@ -3,4 +3,3 @@
 ## 步骤
 * npm init //初始化为一个npm项目
 * npm i webpack vue vue-loader css-loader vue-template-compiler //安装功能依赖
-* 
